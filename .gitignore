@@ -1,3 +1,3 @@
-.swp
-.py
-.pyc
+*.swp
+*.py
+*.pyc
