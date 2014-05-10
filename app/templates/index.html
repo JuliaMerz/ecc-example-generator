@@ -1,0 +1,46 @@
+{% macro render_field(field) %}
+    {% if field.errors %}
+        <tr>
+            <ul class="errors">
+            {% for error in field.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </tr>
+    {% endif %}
+    <tr>
+        <td class="left">
+            {{field.label}}
+        </td>
+        <td class="right">
+            {{field}}
+        </td>
+    </tr>
+{% endmacro %}
+{% extends "base.html"%}
+{% block content %}
+    <script src="/static/form.js"></script>
+    <div id="form">
+    <form id="ecc-form" action="ecc/" method="post">
+        <table>
+            {{ render_field(form.n) }}
+            {{ render_field(form.k) }}
+            {{ render_field(form.mod) }}
+            {{ render_field(form.show_inv) }}
+            {{ render_field(form.show_rref) }}
+            {{ render_field(form.show_lagrange) }}
+            {{ render_field(form.show_orig) }}
+            {{ render_field(form.show_bw) }}
+            <tr>
+                <td class="left">
+                </td>
+                <td class="right">
+                    <button type="button">Test</button>
+                    <button type="button" onclick="send()">Generate</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <div id="output">
+    </div>
+{% endblock %}

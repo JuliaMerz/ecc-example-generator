@@ -1,0 +1,6 @@
+#output {
+    white-space: pre-wrap;
+}
+.right *{
+    float: right;
+}
