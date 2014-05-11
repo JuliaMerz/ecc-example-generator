@@ -1,9 +1,9 @@
 from wtforms import Form, BooleanField, IntegerField, validators
 
 class ECCForm(Form):
-    n = IntegerField('Length of original message (n in notes)', [validators.Required()])
-    k = IntegerField('Number of errors to protect against (k in notes):', [validators.Required()])
-    mod = IntegerField('Prime number we are working modulo (must be prime and bigger than n + 2k)\nEnter \"0\" to default to next highest prime:', [validators.Required()])
+    n = IntegerField('Length of original message (n in notes)', [validators.NumberRange(min=1)])
+    k = IntegerField('Number of errors to protect against (k in notes):', [validators.NumberRange(min=1)])
+    mod = IntegerField('Prime number we are working modulo (must be prime and bigger than n + 2k)\nEnter \"0\" to default to next highest prime:', [validators.NumberRange(min=0)])
     show_inv = BooleanField('Multiplicative inverse / EGCD?')
     show_rref = BooleanField('Row Reduction to solve system of equations?')
     show_lagrange = BooleanField('Lagrange Polynomial Interpolation?')

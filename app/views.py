@@ -11,9 +11,11 @@ def index():
 
 @app.route('/ecc/', methods=['POST'])
 def ecc():
-    print request.form
     form = forms.ECCForm(request.form)
     if form.validate():
-        print form.k.data
-        return ecc_web.run_web(int(form.n.data), int(form.k.data), int(form.mod.data), form.show_inv.data, form.show_rref.data, form.show_lagrange.data, form.show_orig.data, form.show_bw.data)
+        try:
+            output = ecc_web.run_web(int(form.n.data), int(form.k.data), int(form.mod.data), form.show_inv.data, form.show_rref.data, form.show_lagrange.data, form.show_orig.data, form.show_bw.data)
+        except Exception:
+            output = "ERROR: Please contact Sebastian Merz and tell him exactly what you did to cause this"
+        return output
     return render_template("errors.html", form=form)
