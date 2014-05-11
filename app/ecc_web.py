@@ -502,7 +502,7 @@ def get_user_input():
 def pause():
     #Stop pausing from slowing us down
     #raw_input("Press Enter to continue...")
-    output.append_line("")
+    output.append_line("<hr>")
 
 
 #Main interactive function

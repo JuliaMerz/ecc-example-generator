@@ -1,6 +1,21 @@
 #output {
     white-space: pre-wrap;
 }
+.wrapper {
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 60px;
+    padding-bottom: 48px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}
+.wrapper table{
+    width: 100%
+}
+.wrapper form{
+    margin-bottom: 0px;
+}
 .right *{
     float: right;
 }

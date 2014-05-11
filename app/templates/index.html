@@ -19,7 +19,7 @@
 {% extends "base.html"%}
 {% block content %}
     <script src="/static/form.js"></script>
-    <div id="form">
+    <div class="wrapper" id="form">
     <form id="ecc-form" action="ecc/" method="post">
         <table>
             {{ render_field(form.n) }}
@@ -34,13 +34,12 @@
                 <td class="left">
                 </td>
                 <td class="right">
-                    <button type="button">Test</button>
                     <button type="button" onclick="send()">Generate</button>
                 </td>
             </tr>
         </table>
     </form>
     </div>
-    <div id="output">
+    <div class="wrapper" id="output">
     </div>
 {% endblock %}
