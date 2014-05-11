@@ -1,21 +1,35 @@
 #output {
     white-space: pre-wrap;
 }
+html{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .wrapper {
     width: 1170px;
     margin-left: auto;
     margin-right: auto;
     padding: 48px 60px;
     padding-bottom: 48px;
-    background-color: #e0e0e0;
+    background-color: #eee;
     margin-bottom: 10px;
+}
+h1 {
+    margin-top: -00px;
+    padding-top: 0px;
 }
 .wrapper table{
     width: 100%
 }
+.wrapper tr {
+    //border-bottom: solid gray 1px;
+}
 .wrapper form{
     margin-bottom: 0px;
 }
+.wrapper form input{
+    //text-align: right;
+    max-width: 40px;
+}
 .right *{
-    float: right;
+    float: left;
 }

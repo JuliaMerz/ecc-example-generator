@@ -1,18 +1,10 @@
 {% macro render_field(field) %}
-    {% if field.errors %}
-        <tr>
-            <ul class="errors">
-            {% for error in field.errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </tr>
-    {% endif %}
     <tr>
         <td class="left">
-            {{field.label}}
+            {{field}}
         </td>
         <td class="right">
-            {{field}}
+            {{field.label}}
         </td>
     </tr>
 {% endmacro %}
@@ -20,6 +12,12 @@
 {% block content %}
     <script src="/static/form.js"></script>
     <div class="wrapper" id="form">
+    <h1>ECC Problem Generator</h1>
+    <p>
+    Practice problem generator with solutions for Reed Solomon codes as presented in CS70, Spring 2013 at UC Berkeley.<br>
+    Original written by Quinn Johnson. Made web compatible and hosted by Sebastian Merz.</p>
+    </p>
+    <hr>
     <form id="ecc-form" action="ecc/" method="post">
         <table>
             {{ render_field(form.n) }}
@@ -32,14 +30,14 @@
             {{ render_field(form.show_bw) }}
             <tr>
                 <td class="left">
+                    <button type="button" onclick="send()">Generate</button>
                 </td>
                 <td class="right">
-                    <button type="button" onclick="send()">Generate</button>
                 </td>
             </tr>
         </table>
     </form>
     </div>
-    <div class="wrapper" id="output">
+    <div style="display: none;" class="wrapper" id="output">
     </div>
 {% endblock %}
